@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://kuy.github.io/sitemap.xml
+Sitemap: https://blog.endflow.net/sitemap.xml
