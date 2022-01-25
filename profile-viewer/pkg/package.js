@@ -448,9 +448,6 @@ async function init(input) {
     imports.wbg.__wbg_stroke_bed807f727b58a90 = function(arg0) {
         getObject(arg0).stroke();
     };
-    imports.wbg.__wbg_log_386a8115a84a780d = function(arg0) {
-        console.log(getObject(arg0));
-    };
     imports.wbg.__wbg_createElement_ba61aad8af6be7f4 = handleError(function(arg0, arg1, arg2) {
         var ret = getObject(arg0).createElement(getStringFromWasm0(arg1, arg2));
         return addHeapObject(ret);
@@ -895,11 +892,11 @@ async function init(input) {
         var ret = getObject(arg0).document;
         return isLikeNone(ret) ? 0 : addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper267 = function(arg0, arg1, arg2) {
+    imports.wbg.__wbindgen_closure_wrapper266 = function(arg0, arg1, arg2) {
         var ret = makeMutClosure(arg0, arg1, 11, __wbg_adapter_20);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper269 = function(arg0, arg1, arg2) {
+    imports.wbg.__wbindgen_closure_wrapper268 = function(arg0, arg1, arg2) {
         var ret = makeMutClosure(arg0, arg1, 15, __wbg_adapter_23);
         return addHeapObject(ret);
     };
