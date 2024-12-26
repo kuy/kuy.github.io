@@ -294,7 +294,7 @@
 <h2 id="yi-wen-3-xing-tietukuhadounatutenno">疑問 3: 型チェックはどうなってんの？</h2>
 <p>まるでスクリプト言語という感じだったのでどこまで型チェックが効いているのか俄然興味が湧いてくる。ということでこの柔軟性のトレードオフとなっている型チェックの限界、仕組み上の制限について見ていく。</p>
 <h3 id="tong-zixing-noapurikesiyondetahafu-shu-bao-chi-dekinai">同じ型のアプリケーションデータは複数保持できない</h3>
-<p><code>TypeId</code> をキーにした <code>HashMap</code> のデータ構造という時点でこれはどうしょもない部分。試したところ、 <code>data(&quot;Foo&quot;)</code> と <code>data(&quot;Bar&quot;)</code> を呼び出して、ハンドラを <code>fn index(str1: web::Data&lt;&amp;str&gt;, str2: web::Data&lt;&amp;str&gt;)</code> にすると、どちらの引数にも <code>&quot;Foo&quot;</code> が入っていた。 <code>HashMap</code> の実装的には上書きされる気がしたけど、なぜそうならないのかは深追いしていない。</p>
+<p><code>TypeId</code> をキーにした <code>HashMap</code> のデータ構造という時点でこれはどうしょもない部分。試したところ、 <code>data("Foo")</code> と <code>data("Bar")</code> を呼び出して、ハンドラを <code>fn index(str1: web::Data&lt;&amp;str&gt;, str2: web::Data&lt;&amp;str&gt;)</code> にすると、どちらの引数にも <code>"Foo"</code> が入っていた。 <code>HashMap</code> の実装的には上書きされる気がしたけど、なぜそうならないのかは深追いしていない。</p>
 <p>回避策として <code>type Hoge = String</code> みたいなエイリアスだと <code>TypeId</code> が同一になって別々のデータとして格納できないので代わりに<a href="https://doc.rust-lang.org/rust-by-example/generics/new_types.html">New Type イディオム</a>を使えばよい。</p>
 <h3 id="data-dege-na-sitenaixing-woyin-shu-niqu-ruhandoraguan-shu-demokonpairutong-ru"><code>data()</code> で格納してない型を引数に取るハンドラ関数でもコンパイル通る</h3>
 <p>さすがにこれは現状の仕組みだと検出のしようがない。<code>Data&lt;T&gt;</code> に実装された <code>FromRequest</code> トレイトの <code>from_request()</code> 関数で <code>Extensions</code> から値を引き出すときに存在しないため <code>App data is not configured, to configure use App::data()</code> というエラーが発生する。</p>

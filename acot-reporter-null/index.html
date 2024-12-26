@@ -149,7 +149,7 @@
 <p>そしたら <code>npm link</code> を実行して「被リンク package」としての準備は OK です。</p>
 <p>次にテスト用に <code>acot-study</code> というディレクトリを作って、ここで <code>npx acot run</code> できるように準備します。
 そのあとローカル package を使えるように <code>npm link acot-reporter-null</code> を実行してシンボリックリンクを作成します。</p>
-<p>最後に <code>acot.config.js</code> を変更して <code>reporter: &quot;null&quot;</code> を追加します。</p>
+<p>最後に <code>acot.config.js</code> を変更して <code>reporter: "null"</code> を追加します。</p>
 <pre data-lang="javascript" style="background-color:#2b303b;color:#6c7079;" class="language-javascript "><code class="language-javascript" data-lang="javascript"><span style="color:#abb2bf;">module.exports </span><span style="color:#adb7c9;">= </span><span style="color:#abb2bf;">{
 </span><span style="color:#abb2bf;">  presets: [</span><span style="color:#9acc76;">&quot;@acot/wcag&quot;</span><span style="color:#abb2bf;">],
 </span><span style="color:#abb2bf;">  reporter: </span><span style="color:#9acc76;">&quot;null&quot;</span><span style="color:#abb2bf;">,
